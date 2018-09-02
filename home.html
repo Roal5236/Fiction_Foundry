@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upload URL</title>
+	<style type="text/css">
+		::placeholder { /* Most modern browsers support this now. */
+		   color:    #ffffff;
+		   opacity:1;
+		}
+
+		p{
+			color:#ffffff;
+		}
+		input{
+			color:#ffffff;
+		}
+	</style>
+	<script type="text/javascript">
+		function changeDirImage(){
+			document.getElementById('InstImg').src="Images/DirUrl.png"
+		}
+
+		function changeImdbImage(){
+			document.getElementById('InstImg').src="Images/ImdbUrl.png"
+		}
+
+		function changeBackImage(){
+			document.getElementById('InstImg').src="Images/BackImg.png"
+		}
+
+		function changeCoverImage(){
+			document.getElementById('InstImg').src="Images/CoverImg.png"
+		}
+
+		function changeColorImage(){
+			document.getElementById('InstImg').src="Images/ColorIMG.png"
+		}
+	</script>
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+</head>
+<body style="margin:0px;background:url('Images/disp2.jpg');background-size:cover;font-family: 'Work Sans', sans-serif; ">
+
+<div style="width:100%;height:750px;overflow-y:hidden;">
+
+	<div style="width:80%;height:600px;margin:auto;margin-top:5%;background-color:rgba(0,0,0,0.8);display:flex;border:3px solid #ffffff;box-shadow: 0px 0px 20px 5px #000000">
+
+		<div style="flex:wrap;width:50%;border-right:1px solid black">
+			<div style="padding:2% 10% 2% 10%">
+				<form action="SaveAllEpisodes.php" method="POST" enctype="multipart/form-data">
+					<h3 style="color:#ffffff;margin:0px">FILL THIS FORM</h3>
+					<hr style="width:100%;margin:0px;margin-bottom:5%">
+					<input type="text" name="Direct" placeholder="DIRECTORY LOCATION..." style="width:100%;padding:10px;background-color:rgba(0,0,0,0);border:3px solid #ffffff;margin:2%" onclick="changeDirImage()">
+
+					<input type="text" name="title" placeholder="TITLE..." style="width:100%;padding:10px;background-color:rgba(0,0,0,0);border:3px solid #ffffff;;margin:2%" onclick="changeDirImage()">
+
+					<div style="width:101%;margin:8%;margin-bottom:10%">
+					 	<p style="width:50%;float:left;font-weight:bold;">SEASON</p>
+
+						 <select name="noz" style="width:50%;float:left;padding:10px;background-color:#0099cc;border:none;border-radius:30px;color:#ffffff">
+						  <option value="1">1</option>
+						  <option value="2">2</option>
+						  <option value="3">3</option>
+						  <option value="4">4</option>
+						  <option value="5">5</option>
+
+						</select> 
+					</div>
+					<br>
+
+					<div style="width:100%;margin:8%">
+					 	<p style="width:50%;float:left;font-weight:bold;">TYPE</p>
+
+						 <select name="type" style="width:50%;float:left;padding:10px;background-color:#0099cc;border:none;border-radius:30px;color:#ffffff">
+						  <option value="MOVIE">MOVIE</option>
+						  <option value="TV SHOW">TV SHOW</option>
+						  <option value="ANIME">ANIME</option>
+						  <option value="OTHER">OTHER</option>
+						</select> 
+					</div>
+
+
+					<div style="width:100%;margin:4%">	
+						<div style="width:40%;float:left;padding:3.5%;border:3px solid #ffffff;margin-right:2%;border-radius:10px">
+							<p style="text-align:center;">BACKGROUND IMAGE</p>
+							<input type="file" name="BackImg" style="width:100%;padding:10px;" onclick="changeBackImage()" placeholder=" ">
+						</div>
+						<div style="width:40%;float:left;padding:3.5%;border:3px solid #ffffff;border-radius:10px">
+							<p style="text-align:center;">COVER IMAGE</p>
+							<input type="file" name="CoverImg" style="width:100%;padding:10px" onclick="changeCoverImage()">
+						</div>
+					</div>
+
+						
+						<input type="text" name="ColorImg" placeholder="THEME COLOR" style="width:100%;padding:10px;background-color:rgba(0,0,0,0);border:3px solid #ffffff;margin:2%" onclick="changeColorImage()">
+
+						<br>
+						<br>
+						<center><input type="submit" name="submit" style="width:100%;background-color:#0099cc;margin:2%;border:1px solid #0099cc;border-radius:30px;padding:4px;color:#ffffff;"></center>
+				</form>
+			</div>
+		</div>
+
+		<div style="flex:wrap;width:50%;">
+			<img id="InstImg" src="Images/DirUrl.png" style="width:100%;height:600px">
+		</div>
+
+	</div>
+	
+</div>
+
+</body>
+</html>
